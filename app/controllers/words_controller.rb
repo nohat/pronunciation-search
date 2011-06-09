@@ -1,23 +1,37 @@
 class WordsController < ApplicationController
-  # GET /words
-  # GET /words.xml
+  require 'text'
+
   def index
-    @words = Word.paginate :page => params[:page]
+    if params[:q]
+      @words = Word.paginate(
+        :page => params[:page],
+        :conditions => ['name like ?', "%#{params[:q]}%"]
+        ).sort_by do |word|
+          Text::Levenshtein.distance(word.name, params[:q])
+        end
+    elsif name = params[:word] && params[:word][:name]
+      @word = Word.find(name)
+      return redirect_to word_path @word.friendly_id
+    else
+      @words = Word.paginate :page => params[:page]
+    end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @words }
+#      format.js   { render :json => @words }
+      format.js { render :json => @words.map{ |word| word.as_json({:only => [:name], :methods => :friendly_id}) } }
     end
   end
 
   # GET /words/1
   # GET /words/1.xml
   def show
-    @word = Word.find(params[:id])
+    @word = Word.find(params[:id], :include => :pronunciations)
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @word }
+      format.js  { render :json => @word }
+      format.xml { render :xml => @word }
     end
   end
 

@@ -1,3 +1,7 @@
+- form_for :word, :html => {:method => 'get'} do |f|
+  %p
+    = f.label :name
+    = f.text_field :name
 %h1 Listing words
 %table
   %tr
