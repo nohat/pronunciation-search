@@ -3,12 +3,17 @@ class WordsController < ApplicationController
 
   def index
     if params[:q]
-      @words = Word.paginate(
-        :page => params[:page],
-        :conditions => ['name like ?', "%#{params[:q]}%"]
+      words_by_spelling = Word.where(
+        'name like ?', "%#{params[:q]}%"
         ).sort_by do |word|
           Text::Levenshtein.distance(word.name, params[:q])
         end
+      words_by_pronunciation = Pronunciation.where(
+        'arpabet like ?', "%#{params[:q]}%"
+        ).sort_by do |pronunciation|
+          Text::Levenshtein.distance(pronunciation.arpabet, params[:q])
+        end.map &:word
+      @words = words_by_pronunciation.concat(words_by_spelling).first(50)
     elsif name = params[:word] && params[:word][:name]
       @word = Word.find(name)
       return redirect_to word_path @word.friendly_id
