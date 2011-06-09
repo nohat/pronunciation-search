@@ -8,13 +8,13 @@ gem 'rails', '3.0.8'
 gem 'sqlite3'
 
 # Use unicorn as the web server
-# gem 'unicorn'
+gem 'unicorn'
 
 # Deploy with Capistrano
 # gem 'capistrano'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
- gem 'ruby-debug'
+gem 'ruby-debug'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
 # Bundle the extra gems:
@@ -29,3 +29,7 @@ gem 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+gem 'haml'
+gem 'friendly_id'
+gem 'will_paginate', '~> 3.0.pre2'

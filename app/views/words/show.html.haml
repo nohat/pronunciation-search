@@ -1,0 +1,16 @@
+%p#notice= notice
+%p
+  %b Name:
+  = @word.name
+%h2 Pronunciations
+= render :partial => "pronunciations/pronunciation", |
+  :collection => @word.pronunciations                |
+%h3 Add a pronunciation:
+= form_for([@word, @word.pronunciations.build]) do |f|
+  .field
+    = f.label :arpabet
+    = f.text_field :arpabet
+  .actions
+    = f.submit
+= link_to 'Edit', edit_word_path(@word)
+| #{link_to 'Back', words_path}
