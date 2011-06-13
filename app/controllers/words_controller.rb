@@ -6,7 +6,7 @@ class WordsController < ApplicationController
     elsif name = params[:word] && params[:word][:name]
       return redirect_to word_path Word.find(name).friendly_id
     else
-      @words = Word.page params[:page]
+      @words = Word.includes(:pronunciations).page params[:page]
     end
 
     respond_to do |format|

@@ -1,9 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.8'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '>=3.1.0.rc4'
 
 gem 'sqlite3'
 
@@ -13,26 +10,24 @@ gem 'unicorn'
 # Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
-gem 'ruby-debug'
-# gem 'ruby-debug19', :require => 'ruby-debug'
+gem 'ruby-debug19', :require => 'ruby-debug'
 
-# Bundle the extra gems:
-# gem 'bj'
-# gem 'nokogiri'
-# gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
-
-# Bundle gems for the local environment. Make sure to
-# put test-only gems in this group so their generators
-# and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
-
-gem 'haml'
+#gem 'blueprint-css', :git => 'https://github.com/joshuaclayton/blueprint-css.git'
+gem 'coffee-script'
+#gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
+gem 'compass', ">= 0.11.3"
 gem 'friendly_id'
-gem 'kaminari'
+gem 'haml'
 gem 'jquery-rails', '>= 1.0.3'
+gem 'json'
+gem 'kaminari'
 gem 'rails3-jquery-autocomplete'
+gem 'sass-rails', "~> 3.1.0.rc"
+#gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
 gem 'text'
+gem 'uglifier'
+
+group :test do
+  # Pretty printed test output
+  gem 'turn', :require => false
+end
