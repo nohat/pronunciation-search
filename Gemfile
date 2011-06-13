@@ -32,7 +32,7 @@ gem 'ruby-debug'
 
 gem 'haml'
 gem 'friendly_id'
-gem 'will_paginate', '~> 3.0.pre2'
+gem 'kaminari'
 gem 'jquery-rails', '>= 1.0.3'
 gem 'rails3-jquery-autocomplete'
 gem 'text'

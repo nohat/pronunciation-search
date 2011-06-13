@@ -1,5 +1,1 @@
-%p
-  = pronunciation.arpabet
-  = link_to 'delete', [pronunciation.word, pronunciation], |
-    :confirm => 'Are you sure?',                                         |
-    :method => :delete                                                   |
+= link_to pronunciation, words_path(:q => pronunciation.arpabet)

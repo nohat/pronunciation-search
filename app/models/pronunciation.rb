@@ -5,4 +5,8 @@ class Pronunciation < ActiveRecord::Base
     arpabet
   end
   
+  def to_s
+    "/#{arpabet}/"
+  end
+  
 end

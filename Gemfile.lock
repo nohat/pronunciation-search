@@ -41,6 +41,8 @@ GEM
     jquery-rails (1.0.9)
       railties (~> 3.0)
       thor (~> 0.14)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     kgio (2.4.1)
     linecache (0.43)
     mail (2.2.19)
@@ -86,7 +88,6 @@ GEM
     unicorn (3.6.2)
       kgio (~> 2.3)
       rack
-    will_paginate (3.0.pre2)
     yajl-ruby (0.8.2)
 
 PLATFORMS
@@ -96,10 +97,10 @@ DEPENDENCIES
   friendly_id
   haml
   jquery-rails (>= 1.0.3)
+  kaminari
   rails (= 3.0.8)
   rails3-jquery-autocomplete
   ruby-debug
   sqlite3
   text
   unicorn
-  will_paginate (~> 3.0.pre2)

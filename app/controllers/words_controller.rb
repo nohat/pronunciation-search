@@ -1,35 +1,21 @@
 class WordsController < ApplicationController
-  require 'text'
-
   def index
     if params[:q]
-      words_by_spelling = Word.where(
-        'name like ?', "%#{params[:q]}%"
-        ).sort_by do |word|
-          Text::Levenshtein.distance(word.name, params[:q])
-        end
-      words_by_pronunciation = Pronunciation.where(
-        'arpabet like ?', "%#{params[:q]}%"
-        ).sort_by do |pronunciation|
-          Text::Levenshtein.distance(pronunciation.arpabet, params[:q])
-        end.map &:word
-      @words = words_by_pronunciation.concat(words_by_spelling).first(50)
+      matches = Word.matches(params[:q])
+      @words = Kaminari.paginate_array(matches).page params[:page]
     elsif name = params[:word] && params[:word][:name]
-      @word = Word.find(name)
-      return redirect_to word_path @word.friendly_id
+      return redirect_to word_path Word.find(name).friendly_id
     else
-      @words = Word.paginate :page => params[:page]
+      @words = Word.page params[:page]
     end
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html
 #      format.js   { render :json => @words }
       format.js { render :json => @words.map{ |word| word.as_json({:only => [:name], :methods => :friendly_id}) } }
     end
   end
 
-  # GET /words/1
-  # GET /words/1.xml
   def show
     @word = Word.find(params[:id], :include => :pronunciations)
 
@@ -37,66 +23,6 @@ class WordsController < ApplicationController
       format.html # show.html.erb
       format.js  { render :json => @word }
       format.xml { render :xml => @word }
-    end
-  end
-
-  # GET /words/new
-  # GET /words/new.xml
-  def new
-    @word = Word.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @word }
-    end
-  end
-
-  # GET /words/1/edit
-  def edit
-    @word = Word.find(params[:id])
-  end
-
-  # POST /words
-  # POST /words.xml
-  def create
-    @word = Word.new(params[:word])
-
-    respond_to do |format|
-      if @word.save
-        format.html { redirect_to(@word, :notice => 'Word was successfully created.') }
-        format.xml  { render :xml => @word, :status => :created, :location => @word }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /words/1
-  # PUT /words/1.xml
-  def update
-    @word = Word.find(params[:id])
-
-    respond_to do |format|
-      if @word.update_attributes(params[:word])
-        format.html { redirect_to(@word, :notice => 'Word was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /words/1
-  # DELETE /words/1.xml
-  def destroy
-    @word = Word.find(params[:id])
-    @word.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(words_url) }
-      format.xml  { head :ok }
     end
   end
 end

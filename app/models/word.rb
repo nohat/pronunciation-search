@@ -1,11 +1,25 @@
 class Word < ActiveRecord::Base
   has_friendly_id :name, :use_slug => true
   has_many :pronunciations
-  cattr_reader :per_page
-  @@per_page = 500
-#  @@per_page = 10
 
-#  def as_json(options)
-#    super(options.merge :except => [:updated_at, :created_at], :include => :pronunciations)
-#  end
+  module Matches
+    def pronunciation_matches(query)
+      Pronunciation.where('arpabet like ?', "%#{query}%").includes(:word => :pronunciations).map do |pron|
+        {:result => pron.word, :score => Text::Levenshtein.distance(pron.arpabet, query)}
+      end
+    end
+
+    def spelling_matches(query)
+      where('name like ?', "%#{query}%").map do |word| 
+        {:result => word, :score => Text::Levenshtein.distance(word.name, query)}
+      end
+    end
+
+    def matches(query)
+      all_matches = spelling_matches(query) + pronunciation_matches(query)
+      all_matches.sort_by { |match| match[:score] }.map { |match| match[:result] }
+    end
+  end
+  
+  extend Matches
 end
