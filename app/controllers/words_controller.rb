@@ -3,8 +3,6 @@ class WordsController < ApplicationController
     if params[:q]
       matches = Word.matches(params[:q])
       @words = Kaminari.paginate_array(matches).page params[:page]
-    elsif name = params[:word] && params[:word][:name]
-      return redirect_to word_path Word.find(name).friendly_id
     else
       @words = Word.includes(:pronunciations).page params[:page]
     end

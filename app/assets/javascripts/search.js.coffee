@@ -1,7 +1,4 @@
-$("#q").livesearch 
+$("input#q").livesearch 
   searchCallback: (searchTerm) ->
-    alert('doing live search...')
+    alert('doing live search...' + searchTerm)
 
-  queryDelay: 250
-  innerText: "Search"
-  minimumSearchLength: 3
