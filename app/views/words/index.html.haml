@@ -1,10 +1,6 @@
-= render :partial => 'search_form'
-= paginate @words
-%table
-  %tr
-    %th Word
-    %th Pronunciations
-  - @words.each do |word|
-    %tr
-      %td= word.name
-      %td= render :partial => "pronunciations/pronunciation", :collection => word.pronunciations
+#header
+  = render :partial => 'search_form'
+#nav
+  = paginate @words
+#content
+  = render :partial => 'table'
