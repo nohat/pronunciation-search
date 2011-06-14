@@ -1,0 +1,8 @@
+%table
+  %tr
+    %th Word
+    %th Pronunciations
+  - @words.each do |word|
+    %tr
+      %td= word.name
+      %td= render :partial => "pronunciations/pronunciation", :collection => word.pronunciations
