@@ -90,15 +90,30 @@ class Pronunciation < ActiveRecord::Base
     return true if sound2.nil?
     # no DL, TL
     return false if sound2 == 'L' && %W[D T].include?(sound1)
+    # no TS
+    return false if type(sound1) == :stop && sound2 == 'S'
     return true if sonority_level(sound1) < sonority_level(sound2)
     false
   end
 
+  [:stop :liquid]
+  
+
+  POSSIBLE_ONSETS = [
+    %W[P L], %W[B L], %W[K L], %W[G L], %W[P R], %W[B R], %W[T R], %W[D R], %W[K R], %W[G R], %W[T W], %W[D W], %W[G W], %W[K W], %W[P W],
+    %W[F L], %W[S L], %W[TH L], %W[F R], %W[TH R], %W[SH R], %W[H W], %W[S W], %W[TH W], %W[V W],
+    %W[P J], %W[B J], %W[T J], %W[D J], %W[K J], %W[G J], %W[M J], %W[N J], %W[F J], %W[V J], %W[TH J], %W[S J], %W[Z J], %W[H J], %W[L J]
+    %W[S P], %W[S T], %W[S K],
+    %W[S M], %W[S N],
+    %W[S F], %W[S TH],
+    %W[S P L], %W[S K L], %W[S P R], %W[S T R], %W[S K R], %W[S K W], %W[S M J], %W[S P J], %W[S T J], %W[S K J],
+    %W[S F R]
+  ]
   SONORITY_HIERARCHY = {
     :vowel => 10,
     :semivowel => 9,
     :liquid => 8,
-    :nasal => 7,
+    :nasal => 5,
     :fricative => 5,
     :aspirate => 5,
     :affricate => 5,
