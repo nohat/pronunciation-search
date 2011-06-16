@@ -44,7 +44,8 @@ class Pronunciation < ActiveRecord::Base
   end
 
   class Parser
-    def initialize
+    def initialize(input)
+      @input = input
       @syllables = []
       @consonant_queue = []
       @current_syllable = {}
@@ -75,7 +76,7 @@ class Pronunciation < ActiveRecord::Base
         pr.current_syllable = {:onset => onset, :peak => pr.vowel}
       end
       before_transition all => :finished do |pr|
-        pr.current_syllable[:code] = pr.consonant_queue
+        pr.current_syllable[:coda] = pr.consonant_queue
         pr.syllables.push pr.current_syllable
       end
     end
@@ -87,51 +88,22 @@ class Pronunciation < ActiveRecord::Base
       @consonant_queue.push sound
       super
     end
+    def parse
+      @input.each do |sound|
+        if (Pronunciation.type(sound)) == :vowel
+          get_vowel(sound)
+        else
+          get_consonant(sound)
+        end
+      end
+      finish
+      syllables
+    end
   end
 
   def self.to_syllables(sounds)
-    pr = Parser.new
-    sounds.each do |sound|
-#      puts "sending #{sound}"
-      if (type(sound)) == :vowel
-        pr.get_vowel(sound)
-      else
-        pr.get_consonant(sound)
-      end
-    end
-    pr.finish
-    pr.syllables
-  end
-
-  def self.to_syllable_data(sounds)
-    # state machine: iterates over each sound constructing syllables
-    in_starting_onset = true
-    consonant_queue = []
-    syllables = []
-    current_syllable = {}
-    sounds.each do |sound|
-      if (type(sound) == :vowel)
-        if in_starting_onset
-          current_syllable[:onset] = consonant_queue
-          current_syllable[:peak] = sound
-          consonant_queue = []
-          in_starting_onset = false
-        else
-          coda, onset = split_cluster(consonant_queue)
-          current_syllable[:coda] = coda
-          syllables.push current_syllable
-          current_syllable = {}
-          current_syllable[:onset] = onset
-          current_syllable[:peak] = sound
-          consonant_queue = []
-        end
-      else
-        consonant_queue.push sound
-      end
-    end
-    current_syllable[:coda] = consonant_queue
-    syllables.push current_syllable
-    syllables
+    parser = Parser.new sounds
+    parser.parse
   end
 
   def self.split_cluster(cluster)
