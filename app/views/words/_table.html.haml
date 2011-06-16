@@ -6,3 +6,4 @@
     %tr
       %td= word.name
       %td= render :partial => "pronunciations/pronunciation", :collection => word.pronunciations
+      %td= word.pronunciations.map {|p| p.ipa}.join ', '

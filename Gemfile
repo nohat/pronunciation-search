@@ -22,10 +22,12 @@ gem 'jquery-rails', '>= 1.0.3'
 gem 'json'
 gem 'kaminari'
 gem 'rails3-jquery-autocomplete'
+gem 'ruby-graphviz', :require => 'graphviz'
 gem 'sass-rails', "~> 3.1.0.rc"
 #gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
 gem 'text'
 gem 'uglifier'
+gem 'state_machine'
 
 group :test do
   # Pretty printed test output

@@ -3,7 +3,7 @@ Factory.define :word do |word|
 end
 
 Factory.define :word_with_pronunciation, :parent => :word do |word|
-  word.pronunciations = [Factory :pronunciation]
+#word.pronunciations = [Factory :pronunciation]
 end
 
 Factory.define :pronunciation do |pronunciation|
