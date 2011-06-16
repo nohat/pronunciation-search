@@ -1,0 +1,698 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+
+  <title>Class: Pronunciation</title>
+
+  <link rel="stylesheet" href="./rdoc.css" type="text/css" media="screen" />
+
+  <script src="./js/jquery.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/thickbox-compressed.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/quicksearch.js" type="text/javascript" charset="utf-8"></script>
+  <script src="./js/darkfish.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+<body id="top" class="class">
+
+  <div id="metadata">
+    <div id="home-metadata">
+      <div id="home-section" class="section">
+        <h3 class="section-header">
+          <a href="./index.html">Home</a>
+          <a href="./index.html#classes">Classes</a>
+          <a href="./index.html#methods">Methods</a>
+        </h3>
+      </div>
+    </div>
+
+    <div id="file-metadata">
+      <div id="file-list-section" class="section">
+        <h3 class="section-header">In Files</h3>
+        <div class="section-body">
+          <ul>
+          
+            <li><a href="./app/models/pronunciation_rb.html?TB_iframe=true&amp;height=550&amp;width=785"
+              class="thickbox" title="app/models/pronunciation.rb">app/models/pronunciation.rb</a></li>
+          
+          </ul>
+        </div>
+      </div>
+
+      
+    </div>
+
+    <div id="class-metadata">
+      
+      <!-- Parent Class -->
+      <div id="parent-class-section" class="section">
+        <h3 class="section-header">Parent</h3>
+        
+        <p class="link">ActiveRecord::Base</p>
+        
+      </div>
+      
+
+      
+
+      
+      <!-- Namespace Contents -->
+      <div id="namespace-list-section" class="section">
+        <h3 class="section-header">Namespace</h3>
+        <ul class="link-list">
+          
+          <li><span class="type">CLASS</span> <a href="Pronunciation/Parser.html">Pronunciation::Parser</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+      <!-- Method Quickref -->
+      <div id="method-list-section" class="section">
+        <h3 class="section-header">Methods</h3>
+        <ul class="link-list">
+          
+          <li><a href="#method-c-ipa_stress_symbol">::ipa_stress_symbol</a></li>
+          
+          <li><a href="#method-c-split_cluster">::split_cluster</a></li>
+          
+          <li><a href="#method-c-syllable_to_ipa">::syllable_to_ipa</a></li>
+          
+          <li><a href="#method-c-to_ipa">::to_ipa</a></li>
+          
+          <li><a href="#method-c-to_syllable_data">::to_syllable_data</a></li>
+          
+          <li><a href="#method-c-to_syllables">::to_syllables</a></li>
+          
+          <li><a href="#method-c-type">::type</a></li>
+          
+          <li><a href="#method-i-as_json">#as_json</a></li>
+          
+          <li><a href="#method-i-ipa">#ipa</a></li>
+          
+          <li><a href="#method-i-sounds">#sounds</a></li>
+          
+          <li><a href="#method-i-to_s">#to_s</a></li>
+          
+          <li><a href="#method-i-to_syllables">#to_syllables</a></li>
+          
+        </ul>
+      </div>
+      
+
+      
+    </div>
+
+    <div id="project-metadata">
+      
+      
+      <div id="fileindex-section" class="section project-section">
+        <h3 class="section-header">Files</h3>
+        <ul>
+        
+          <li class="file"><a href="./doc/README_FOR_APP.html">README_FOR_APP</a></li>
+        
+        </ul>
+      </div>
+      
+
+      <div id="classindex-section" class="section project-section">
+        <h3 class="section-header">Class/Module Index
+          <span class="search-toggle"><img src="./images/find.png"
+            height="16" width="16" alt="[+]"
+            title="show/hide quicksearch" /></span></h3>
+        <form action="#" method="get" accept-charset="utf-8" class="initially-hidden">
+        <fieldset>
+          <legend>Quicksearch</legend>
+          <input type="text" name="quicksearch" value=""
+            class="quicksearch-field" />
+        </fieldset>
+        </form>
+
+        <ul class="link-list">
+        
+          <li><a href="./Pronunciation.html">Pronunciation</a></li>
+        
+          <li><a href="./Pronunciation/Parser.html">Pronunciation::Parser</a></li>
+        
+          <li><a href="./Word.html">Word</a></li>
+        
+          <li><a href="./Word/Matches.html">Word::Matches</a></li>
+        
+          <li><a href="./ApplicationController.html">ApplicationController</a></li>
+        
+          <li><a href="./ApplicationHelper.html">ApplicationHelper</a></li>
+        
+          <li><a href="./HomeController.html">HomeController</a></li>
+        
+          <li><a href="./HomeHelper.html">HomeHelper</a></li>
+        
+          <li><a href="./PronunciationReader.html">PronunciationReader</a></li>
+        
+          <li><a href="./PronunciationsController.html">PronunciationsController</a></li>
+        
+          <li><a href="./PronunciationsHelper.html">PronunciationsHelper</a></li>
+        
+          <li><a href="./WordsController.html">WordsController</a></li>
+        
+          <li><a href="./WordsHelper.html">WordsHelper</a></li>
+        
+        </ul>
+        <div id="no-class-search-results" style="display: none;">No matching classes.</div>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div id="documentation">
+    <h1 class="class">Pronunciation</h1>
+
+    <div id="description" class="description">
+      
+    </div><!-- description -->
+
+    
+    <div id="5Buntitled-5D" class="documentation-section">
+      
+
+      
+
+      
+      <!-- Constants -->
+      <div id="constants-list" class="section">
+        <h3 class="section-header">Constants</h3>
+        <dl>
+        
+          <dt><a name="IPA_STRESS_SYMBOLS">IPA_STRESS_SYMBOLS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="POSSIBLE_ONSETS">POSSIBLE_ONSETS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+          <dt><a name="SOUNDS">SOUNDS</a></dt>
+          
+          <dd class="description"></dd>
+          
+        
+        </dl>
+      </div>
+      
+
+      
+
+      <!-- Methods -->
+      
+      <div id="public-class-method-details" class="method-section section">
+        <h3 class="section-header">Public Class Methods</h3>
+
+      
+        <div id="ipa_stress_symbol-method" class="method-detail ">
+          <a name="method-c-ipa_stress_symbol"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipa_stress_symbol</span><span
+              class="method-args">(stress_level)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ipa_stress_symbol-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">ipa_stress_symbol</span>(<span class="ruby-identifier">stress_level</span>)
+  <span class="ruby-constant">IPA_STRESS_SYMBOLS</span>[<span class="ruby-identifier">stress_level</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ipa_stress_symbol-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipa_stress_symbol-method -->
+
+      
+        <div id="split_cluster-method" class="method-detail ">
+          <a name="method-c-split_cluster"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">split_cluster</span><span
+              class="method-args">(cluster)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="split_cluster-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">split_cluster</span>(<span class="ruby-identifier">cluster</span>)
+  <span class="ruby-identifier">coda</span> = <span class="ruby-identifier">cluster</span>
+  <span class="ruby-identifier">onset</span> = []
+  <span class="ruby-keyword">while</span> <span class="ruby-constant">POSSIBLE_ONSETS</span>.<span class="ruby-identifier">include?</span>([<span class="ruby-identifier">coda</span>.<span class="ruby-identifier">last</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">onset</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">onset</span>.<span class="ruby-identifier">unshift</span> <span class="ruby-identifier">coda</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-keyword">end</span>
+  [<span class="ruby-identifier">coda</span>, <span class="ruby-identifier">onset</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- split_cluster-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- split_cluster-method -->
+
+      
+        <div id="syllable_to_ipa-method" class="method-detail ">
+          <a name="method-c-syllable_to_ipa"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">syllable_to_ipa</span><span
+              class="method-args">(syllable)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="syllable_to_ipa-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">syllable_to_ipa</span>(<span class="ruby-identifier">syllable</span>)
+  <span class="ruby-identifier">vowel</span>, <span class="ruby-identifier">stress_level</span> = <span class="ruby-identifier">syllable</span>[<span class="ruby-value">:peak</span>].<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">/(..)(.)/</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">ipa_string</span> = []
+  <span class="ruby-identifier">ipa_string</span>.<span class="ruby-identifier">push</span>(* <span class="ruby-identifier">syllable</span>[<span class="ruby-value">:onset</span>].<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">sound</span><span class="ruby-operator">|</span> <span class="ruby-identifier">to_ipa</span>(<span class="ruby-identifier">sound</span>)})
+  <span class="ruby-identifier">ipa_string</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">to_ipa</span>(<span class="ruby-identifier">vowel</span>, <span class="ruby-identifier">stress_level</span> <span class="ruby-operator">==</span> <span class="ruby-string">'0'</span>)
+  <span class="ruby-identifier">ipa_string</span>.<span class="ruby-identifier">push</span>(* <span class="ruby-identifier">syllable</span>[<span class="ruby-value">:coda</span>].<span class="ruby-identifier">map</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">sound</span><span class="ruby-operator">|</span> <span class="ruby-identifier">to_ipa</span>(<span class="ruby-identifier">sound</span>)})
+  [<span class="ruby-identifier">ipa_stress_symbol</span>(<span class="ruby-identifier">stress_level</span>), <span class="ruby-identifier">ipa_string</span>.<span class="ruby-identifier">join</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- syllable_to_ipa-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- syllable_to_ipa-method -->
+
+      
+        <div id="to_ipa-method" class="method-detail ">
+          <a name="method-c-to_ipa"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_ipa</span><span
+              class="method-args">(sound, unstressed = nil)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_ipa-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_ipa</span>(<span class="ruby-identifier">sound</span>, <span class="ruby-identifier">unstressed</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">unstressed</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">SOUNDS</span>[<span class="ruby-identifier">sound</span>][<span class="ruby-value">:ipa_unstressed</span>]
+    <span class="ruby-constant">SOUNDS</span>[<span class="ruby-identifier">sound</span>][<span class="ruby-value">:ipa_unstressed</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">SOUNDS</span>[<span class="ruby-identifier">sound</span>][<span class="ruby-value">:ipa</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_ipa-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_ipa-method -->
+
+      
+        <div id="to_syllable_data-method" class="method-detail ">
+          <a name="method-c-to_syllable_data"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_syllable_data</span><span
+              class="method-args">(sounds)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_syllable_data-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_syllable_data</span>(<span class="ruby-identifier">sounds</span>)
+  <span class="ruby-comment"># state machine: iterates over each sound constructing syllables</span>
+  <span class="ruby-identifier">in_starting_onset</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">consonant_queue</span> = []
+  <span class="ruby-identifier">syllables</span> = []
+  <span class="ruby-identifier">current_syllable</span> = {}
+  <span class="ruby-identifier">sounds</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sound</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">type</span>(<span class="ruby-identifier">sound</span>) <span class="ruby-operator">==</span> <span class="ruby-value">:vowel</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">in_starting_onset</span>
+        <span class="ruby-identifier">current_syllable</span>[<span class="ruby-value">:onset</span>] = <span class="ruby-identifier">consonant_queue</span>
+        <span class="ruby-identifier">current_syllable</span>[<span class="ruby-value">:peak</span>] = <span class="ruby-identifier">sound</span>
+        <span class="ruby-identifier">consonant_queue</span> = []
+        <span class="ruby-identifier">in_starting_onset</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">coda</span>, <span class="ruby-identifier">onset</span> = <span class="ruby-identifier">split_cluster</span>(<span class="ruby-identifier">consonant_queue</span>)
+        <span class="ruby-identifier">current_syllable</span>[<span class="ruby-value">:coda</span>] = <span class="ruby-identifier">coda</span>
+        <span class="ruby-identifier">syllables</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">current_syllable</span>
+        <span class="ruby-identifier">current_syllable</span> = {}
+        <span class="ruby-identifier">current_syllable</span>[<span class="ruby-value">:onset</span>] = <span class="ruby-identifier">onset</span>
+        <span class="ruby-identifier">current_syllable</span>[<span class="ruby-value">:peak</span>] = <span class="ruby-identifier">sound</span>
+        <span class="ruby-identifier">consonant_queue</span> = []
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">consonant_queue</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">sound</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">current_syllable</span>[<span class="ruby-value">:coda</span>] = <span class="ruby-identifier">consonant_queue</span>
+  <span class="ruby-identifier">syllables</span>.<span class="ruby-identifier">push</span> <span class="ruby-identifier">current_syllable</span>
+  <span class="ruby-identifier">syllables</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_syllable_data-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_syllable_data-method -->
+
+      
+        <div id="to_syllables-method" class="method-detail ">
+          <a name="method-c-to_syllables"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_syllables</span><span
+              class="method-args">(sounds)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_syllables-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 92</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_syllables</span>(<span class="ruby-identifier">sounds</span>)
+    <span class="ruby-identifier">pr</span> = <span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-identifier">sounds</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sound</span><span class="ruby-operator">|</span>
+<span class="ruby-comment">#      puts &quot;sending #{sound}&quot;</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">type</span>(<span class="ruby-identifier">sound</span>)) <span class="ruby-operator">==</span> <span class="ruby-value">:vowel</span>
+        <span class="ruby-identifier">pr</span>.<span class="ruby-identifier">get_vowel</span>(<span class="ruby-identifier">sound</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">pr</span>.<span class="ruby-identifier">get_consonant</span>(<span class="ruby-identifier">sound</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">pr</span>.<span class="ruby-identifier">finish</span>
+    <span class="ruby-identifier">pr</span>.<span class="ruby-identifier">syllables</span>
+  <span class="ruby-keyword">end</span></pre>
+            </div><!-- to_syllables-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_syllables-method -->
+
+      
+        <div id="type-method" class="method-detail ">
+          <a name="method-c-type"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">type</span><span
+              class="method-args">(sound)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="type-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">type</span>(<span class="ruby-identifier">sound</span>)
+  <span class="ruby-constant">SOUNDS</span>[<span class="ruby-identifier">sound</span>.<span class="ruby-identifier">sub</span> <span class="ruby-regexp">/\d/</span>, <span class="ruby-string">''</span>][<span class="ruby-value">:type</span>]
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- type-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- type-method -->
+
+      
+      </div><!-- public-class-method-details -->
+    
+      <div id="public-instance-method-details" class="method-section section">
+        <h3 class="section-header">Public Instance Methods</h3>
+
+      
+        <div id="as_json-method" class="method-detail ">
+          <a name="method-i-as_json"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">as_json</span><span
+              class="method-args">(options)</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="as_json-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">as_json</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">arpabet</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- as_json-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- as_json-method -->
+
+      
+        <div id="ipa-method" class="method-detail ">
+          <a name="method-i-ipa"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">ipa</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="ipa-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">ipa</span>
+  <span class="ruby-identifier">ipa</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">is_first_syllable</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_syllables</span>(<span class="ruby-identifier">sounds</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">syllable</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">stress_symbol</span>, <span class="ruby-identifier">ipa_string</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">syllable_to_ipa</span>(<span class="ruby-identifier">syllable</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">is_first_syllable</span>
+      <span class="ruby-identifier">is_first_syllable</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">stress_symbol</span> <span class="ruby-operator">==</span> <span class="ruby-string">'.'</span>
+        <span class="ruby-identifier">stress_symbol</span> = <span class="ruby-string">''</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">ipa</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">stress_symbol</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">ipa_string</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ipa</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- ipa-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- ipa-method -->
+
+      
+        <div id="sounds-method" class="method-detail ">
+          <a name="method-i-sounds"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">sounds</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="sounds-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">sounds</span>
+  <span class="ruby-ivar">@sounds</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">arpabet</span>.<span class="ruby-identifier">split</span> <span class="ruby-regexp">/\s/</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- sounds-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- sounds-method -->
+
+      
+        <div id="to_s-method" class="method-detail ">
+          <a name="method-i-to_s"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_s</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_s-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;/#{arpabet}/&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_s-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_s-method -->
+
+      
+        <div id="to_syllables-method" class="method-detail ">
+          <a name="method-i-to_syllables"></a>
+
+          
+          <div class="method-heading">
+            <span class="method-name">to_syllables</span><span
+              class="method-args">()</span>
+            <span class="method-click-advice">click to toggle source</span>
+          </div>
+          
+
+          <div class="method-description">
+            
+            
+            
+
+            
+            <div class="method-source-code" id="to_syllables-source">
+<pre>
+<span class="ruby-comment"># File app/models/pronunciation.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_syllables</span>
+  <span class="ruby-identifier">syllables</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_syllable_data</span> <span class="ruby-identifier">sounds</span>
+  <span class="ruby-identifier">syllables</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">:onset</span>] <span class="ruby-operator">+</span> [<span class="ruby-identifier">s</span>[<span class="ruby-value">:peak</span>]] <span class="ruby-operator">+</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">:coda</span>]}
+<span class="ruby-keyword">end</span></pre>
+            </div><!-- to_syllables-source -->
+            
+          </div>
+
+          
+
+          
+        </div><!-- to_syllables-method -->
+
+      
+      </div><!-- public-instance-method-details -->
+    
+    </div><!-- 5Buntitled-5D -->
+  
+
+  </div><!-- documentation -->
+
+  <div id="validator-badges">
+    <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+    <p><small>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish
+      Rdoc Generator</a> 2</small>.</p>
+  </div>
+
+</body>
+</html>
+
