@@ -1,4 +1,5 @@
-== Welcome to Pron
+Welcome to Pron
+===============
 
 Pron is a Rails application for a site that allows searching for pronunciations
 of words. 
