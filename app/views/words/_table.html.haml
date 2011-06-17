@@ -4,6 +4,6 @@
     %th Pronunciations
   - @words.each do |word|
     %tr
-      %td= word.name
+      %td= link_to word.name, word_path(word)
       %td= render :partial => "pronunciations/pronunciation", :collection => word.pronunciations
       %td= word.pronunciations.map {|p| p.ipa}.join ', '

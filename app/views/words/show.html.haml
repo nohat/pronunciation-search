@@ -1,8 +1,5 @@
-%p#notice= notice
-%p
-  %b Name:
-  = @word.name
-%h2 Pronunciations
-= render :partial => "pronunciations/pronunciation", |
-  :collection => @word.pronunciations                |
-| #{link_to 'Back', words_path}
+#header
+  = render :partial => 'search_form'
+#content
+  %h1= @word.name
+  = render :partial => "pronunciations/table", :locals => { :pronunciations  => @word.pronunciations }

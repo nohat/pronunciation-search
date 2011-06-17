@@ -1,0 +1,8 @@
+%table
+  %tr
+    %th ARPAbet
+    %th IPA
+  - pronunciations.each do |pronunciation|
+    %tr
+      %td= pronunciation.arpabet
+      %td= pronunciation.ipa

@@ -1,4 +1,4 @@
-/* line 1, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 1, ../../app/assets/stylesheets/scaffold.sass */
 body {
   background-color: white;
   color: #333333;
@@ -7,52 +7,52 @@ body {
   line-height: 18px;
 }
 
-/* line 8, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 8, ../../app/assets/stylesheets/scaffold.sass */
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-/* line 13, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 13, ../../app/assets/stylesheets/scaffold.sass */
 pre {
   background-color: #eeeeee;
   padding: 10px;
   font-size: 11px;
 }
 
-/* line 18, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 18, ../../app/assets/stylesheets/scaffold.sass */
 a {
   color: black;
 }
-/* line 20, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 20, ../../app/assets/stylesheets/scaffold.sass */
 a:visited {
   color: #666666;
 }
-/* line 22, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 22, ../../app/assets/stylesheets/scaffold.sass */
 a:hover {
   color: white;
   background-color: black;
 }
 
-/* line 27, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 27, ../../app/assets/stylesheets/scaffold.sass */
 div.field, div.actions {
   margin-bottom: 10px;
 }
 
-/* line 30, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 30, ../../app/assets/stylesheets/scaffold.sass */
 #notice {
   color: green;
 }
 
-/* line 33, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 33, ../../app/assets/stylesheets/scaffold.sass */
 .field_with_errors {
   padding: 2px;
   background-color: red;
   display: table;
 }
 
-/* line 38, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 38, ../../app/assets/stylesheets/scaffold.sass */
 #error_explanation {
   width: 450px;
   border: 2px solid red;
@@ -61,7 +61,7 @@ div.field, div.actions {
   margin-bottom: 20px;
   background-color: #f0f0f0;
 }
-/* line 45, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 45, ../../app/assets/stylesheets/scaffold.sass */
 #error_explanation h2 {
   text-align: left;
   font-weight: bold;
@@ -72,7 +72,7 @@ div.field, div.actions {
   background-color: #cc0000;
   color: white;
 }
-/* line 54, ../../app/assets/stylesheets/scaffold.css.sass */
+/* line 54, ../../app/assets/stylesheets/scaffold.sass */
 #error_explanation ul li {
   font-size: 12px;
   list-style: square;

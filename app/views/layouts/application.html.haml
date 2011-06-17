@@ -4,6 +4,10 @@
     %title Pron
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
-    = csrf_meta_tag
+    = stylesheet_link_tag '/stylesheets/blueprint/screen', media: 'screen, projection'
+    = stylesheet_link_tag '/stylesheets/blueprint/print', media: 'print'
+    /[if IE]
+      = stylesheet_link_tag '/stylesheets/blueprint/ie', media: 'screen, projection'
   %body
-    = yield
+    .container
+      = yield
