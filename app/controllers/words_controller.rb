@@ -9,7 +9,6 @@ class WordsController < ApplicationController
 
     respond_to do |format|
       format.html
-#      format.js   { render :json => @words }
       format.js { render :json => @words.map{ |word| word.as_json({:only => [:name], :methods => :friendly_id}) } }
     end
   end
@@ -18,9 +17,8 @@ class WordsController < ApplicationController
     @word = Word.find(params[:id], :include => :pronunciations)
 
     respond_to do |format|
-      format.html # show.html.erb
+      format.html
       format.js  { render :json => @word }
-      format.xml { render :xml => @word }
     end
   end
 end
