@@ -1,6 +1,9 @@
 $(document).ready ->
-#  alert("The DOM is now loaded and can be manipulated.")
-  $('#q').show(5)
-  $("#q").livesearch 
+  $("form").live "ajax:success", (event, data, status, xhr) ->
+    updateResults(data)
+  $("#q").livesearch
     searchCallback: (searchTerm) ->
-      alert('doing live search...' + searchTerm)
+      $("form").submit()
+    , minimumSearchLength: 5
+updateResults = (data) ->
+  $("#content").html data

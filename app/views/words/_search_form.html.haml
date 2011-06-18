@@ -1,4 +1,4 @@
-.span-15
-  = form_tag words_path, :method => 'get' do
+.push-3
+  = form_tag words_path, :remote => true, 'data-type' => 'html', :method => 'get' do
     %p
-      = text_field_tag :q
+      = text_field_tag :q, nil, :class => 'large'
