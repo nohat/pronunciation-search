@@ -12,7 +12,7 @@ class WordsController < ApplicationController
         if request.xml_http_request?
           render :partial => 'words/table'
         else
-          render :html
+          render :html => @words
         end
       end
       format.js { render :json => @words.map{ |word| word.as_json({:only => [:name], :methods => :friendly_id}) } }
