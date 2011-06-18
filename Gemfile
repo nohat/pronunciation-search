@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '>=3.1.0.rc4'
 
 gem 'sqlite3'
+gem 'mysql2'
 
 # Use unicorn as the web server
 gem 'unicorn'
@@ -12,9 +13,7 @@ gem 'unicorn'
 
 gem 'ruby-debug19', :require => 'ruby-debug'
 
-#gem 'blueprint-css', :git => 'https://github.com/joshuaclayton/blueprint-css.git'
 gem 'coffee-script'
-#gem 'compass', :git => 'https://github.com/chriseppstein/compass.git', :branch => 'rails31'
 gem 'compass', ">= 0.11.3"
 gem 'friendly_id'
 gem 'haml'
@@ -24,7 +23,6 @@ gem 'kaminari'
 gem 'rails3-jquery-autocomplete'
 gem 'ruby-graphviz', :require => 'graphviz'
 gem 'sass-rails', "~> 3.1.0.rc"
-#gem 'sass-rails', :git => 'https://github.com/rails/sass-rails.git'
 gem 'text'
 gem 'uglifier'
 gem 'state_machine'
