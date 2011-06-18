@@ -10,7 +10,7 @@ class Word < ActiveRecord::Base
     end
 
     def spelling_matches(query)
-      where('name like ?', "%#{query}%").map do |word| 
+      where('name like ?', "%#{query}%").includes(:pronunciations).map do |word|
         {:result => word, :score => Text::Levenshtein.distance(word.name, query)}
       end
     end
