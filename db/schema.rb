@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110609014743) do
+ActiveRecord::Schema.define(:version => 20110618000947) do
 
   create_table "pronunciations", :force => true do |t|
     t.string   "arpabet"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(:version => 20110609014743) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "cached_slug"
   end
 
+  add_index "words", ["cached_slug"], :name => "index_words_on_cached_slug", :unique => true
   add_index "words", ["name"], :name => "index_words_on_name"
 
 end
