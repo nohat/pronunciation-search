@@ -28,7 +28,7 @@ class Pronunciation::Phoneme
     'CH' => { :type => :consonant, :ipa => "t\u0283"  },
     'JH' => { :type => :consonant, :ipa => "d\u0292" },
     'TH' => { :type => :consonant, :ipa => "\u03B8"  },
-    'DH' => { :type => :consonant, :ipa => "\u00D0" },
+    'DH' => { :type => :consonant, :ipa => "\u00F0" },
     'F'  => { :type => :consonant, :ipa => 'f'  },
     'V'  => { :type => :consonant, :ipa => 'v' },
     'S'  => { :type => :consonant, :ipa => 's'  },
