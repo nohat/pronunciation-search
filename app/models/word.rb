@@ -22,4 +22,13 @@ class Word < ActiveRecord::Base
   end
   
   extend Matches
+
+  def normalize_friendly_id(text)
+    text = super
+    if friendly_id_config.reserved_words.include? text
+      'x-' + text
+    else
+      text
+    end
+  end
 end
