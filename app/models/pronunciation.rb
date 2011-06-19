@@ -31,4 +31,35 @@ class Pronunciation < ActiveRecord::Base
     end
     ipa_string
   end
+
+  module Search
+    def search(query)
+      like = query.length > 2 ? ".*#{query}.*" : "^#{query}$"
+      clause, params = parse_query(query)
+      raise 'No query found' if clause.blank?
+      matches = Pronunciation.joins(:word).where(clause, *params).includes(:word).map do |pron|
+        {:result => pron, :score => Text::Levenshtein.distance(pron.arpabet, query)}
+      end
+      matches.sort_by { |match| match[:score] }.map { |match| match[:result] }
+    end
+    
+    def parse_query(query)
+      params = []
+      conditions = []
+      spellings      = query.scan(/(~)?\|(.*?)\|/)
+      pronunciations = query.scan(/(~)?\/(.*?)\//)
+      spellings.each do |neg, string|
+        params << string
+        conditions << "words.name#{neg ? ' NOT ' : ' '}REGEXP ?"
+      end
+      pronunciations.each do |neg, string|
+        params << string
+        conditions << "arpabet#{neg ? ' NOT ' : ' '}REGEXP ?"
+      end
+      clause = conditions.join ' AND '
+      return clause, params
+    end
+  end
+
+  extend Search
 end

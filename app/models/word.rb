@@ -4,13 +4,15 @@ class Word < ActiveRecord::Base
 
   module Matches
     def pronunciation_matches(query)
-      Pronunciation.where('arpabet like ?', "%#{query}%").includes(:word => :pronunciations).map do |pron|
+      like = query.length > 2 ? "%#{query}%" : query
+      Pronunciation.where('arpabet like ?', like).includes(:word => :pronunciations).map do |pron|
         {:result => pron.word, :score => Text::Levenshtein.distance(pron.arpabet, query)}
       end
     end
 
     def spelling_matches(query)
-      where('name like ?', "%#{query}%").includes(:pronunciations).map do |word|
+      like = query.length > 2 ? "%#{query}%" : query
+      where('name like ?', like).includes(:pronunciations).map do |word|
         {:result => word, :score => Text::Levenshtein.distance(word.name, query)}
       end
     end
