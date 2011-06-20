@@ -46,7 +46,7 @@ class Pronunciation < ActiveRecord::Base
     def parse_query(query)
       params = []
       conditions = []
-      spellings      = query.scan(/(~)?\|(.*?)\|/)
+      spellings      = query.scan(/(~)?\<(.*?)\>/)
       pronunciations = query.scan(/(~)?\/(.*?)\//)
       spellings.each do |neg, string|
         params << string
