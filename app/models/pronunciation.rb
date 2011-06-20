@@ -37,7 +37,7 @@ class Pronunciation < ActiveRecord::Base
       like = query.length > 2 ? ".*#{query}.*" : "^#{query}$"
       clause, params = parse_query(query)
       raise 'No query found' if clause.blank?
-      matches = Pronunciation.joins(:word).where(clause, *params).includes(:word).map do |pron|
+      matches = Pronunciation.includes(:word).where(clause, *params).map do |pron|
         {:result => pron, :score => Text::Levenshtein.distance(pron.arpabet, query)}
       end
       matches.sort_by { |match| match[:score] }.map { |match| match[:result] }
