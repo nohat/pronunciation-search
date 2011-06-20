@@ -53,6 +53,7 @@ class Pronunciation < ActiveRecord::Base
         conditions << "words.name#{neg ? ' NOT ' : ' '}REGEXP ?"
       end
       pronunciations.each do |neg, string|
+        string.gsub!(/\b(AA|AE|AH|AO|AW|AY|EH|ER|EY|IH|IY|OW|OY|UH|UW)\b/, '\1.')
         params << string
         conditions << "arpabet#{neg ? ' NOT ' : ' '}REGEXP ?"
       end
