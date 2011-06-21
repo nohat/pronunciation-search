@@ -1,4 +1,4 @@
 .push-3
   = form_tag pronunciations_path, :remote => true, 'data-type' => 'html', :method => 'get' do
     %p
-      = text_field_tag :q, 'FOO', :class => 'large'
+      = text_field_tag :q, @query_string, :class => 'large'
