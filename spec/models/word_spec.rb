@@ -22,6 +22,6 @@ describe Word do
     exact_match   = Factory :word, :name => 'exact_match'
     @matches = Word.spelling_matches 'exact_match'
     @results = @matches.map { |match| match[:result] }
-    @results.should be [exact_match, inexact_match]
+    @results.should == [exact_match, inexact_match]
   end
 end
