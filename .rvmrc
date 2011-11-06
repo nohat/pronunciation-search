@@ -11,4 +11,4 @@ local=".rvmrc.local"
 if [ -f ".rvmrc.gemset" ]; then
   gemset="$(cat .rvmrc.gemset)"
 fi
-rvm ruby-1.9.2-p180@$gemset
+rvm ruby-1.9.2-p290@$gemset
