@@ -8,11 +8,6 @@ $(document).ready ->
       query: query
       result: data
     History.pushState(state, "Search for #{query}", new_url)
-  # Do live AJAX search when query length > 5
-#  $("#q").livesearch
-#    searchCallback: (searchTerm) ->
-#      $("form").submit()
-#    , minimumSearchLength: 5
 
 ((window, undefined_) ->
   History = window.History
