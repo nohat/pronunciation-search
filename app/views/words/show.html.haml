@@ -1,5 +1,0 @@
-#header
-  = render :partial => 'search_form'
-#content
-  %h1.span-15= @word.name
-  = render :partial => "pronunciations/table", :locals => { :pronunciations  => @word.pronunciations }
