@@ -1,5 +1,5 @@
 .push-3
-  = form_tag pronunciations_path, :remote => true, 'data-type' => 'html', :method => 'get' do
+  %form{:action => pronunciations_path, :method => "get", "accept-charset" => "UTF-8", "data-remote" => "true", "data-type" => "html"}
     %p
       = text_field_tag :q, @query_string, :class => 'large'
       = submit_tag 'Search'
