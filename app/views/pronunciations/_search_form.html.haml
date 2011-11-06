@@ -2,3 +2,4 @@
   = form_tag pronunciations_path, :remote => true, 'data-type' => 'html', :method => 'get' do
     %p
       = text_field_tag :q, @query_string, :class => 'large'
+      = submit_tag 'Search'
