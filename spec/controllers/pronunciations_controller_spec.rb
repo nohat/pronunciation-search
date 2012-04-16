@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PronunciationsController do
   describe "GET index with no parameters" do
     before do
-      Factory(:word_with_pronunciation)
+      FactoryGirl.create(:word_with_pronunciation)
       get :index
     end
 

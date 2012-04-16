@@ -1,9 +1,9 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>=3.1.1'
+gem 'rails', '>=3.2'
 
 gem 'sqlite3'
-gem "mysql2", "~> 0.3.7", :git => "git://github.com/brianmario/mysql2.git", :ref => "d3a96b8"
+gem 'mysql2'
 
 # Use unicorn as the web server
 gem 'unicorn'
@@ -12,7 +12,7 @@ gem 'unicorn'
 # gem 'capistrano'
 
 gem 'coffee-script'
-gem 'compass', ">= 0.11.3"
+gem 'compass', '>= 0.11.3'
 gem 'friendly_id'
 gem 'haml'
 gem 'jquery-rails', '>= 1.0.3'
@@ -31,8 +31,10 @@ group :test do
 end
 
 group :test, :development do
-  gem 'linecache19', :git => "git://github.com/mark-moseley/linecache.git"
-  gem 'ruby-debug19', :require => 'ruby-debug'
   gem 'factory_girl_rails'
-  gem "rspec-rails", "~> 2.4"
+  gem 'pry'
+  gem 'pry-rails'
+  gem 'rspec'
+  gem 'rspec-rails'
+  gem 'wirble'
 end

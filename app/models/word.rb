@@ -1,5 +1,6 @@
 class Word < ActiveRecord::Base
-  has_friendly_id :name, :use_slug => true
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
   has_many :pronunciations
 
   module Matches

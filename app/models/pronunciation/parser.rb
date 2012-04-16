@@ -6,7 +6,7 @@ class Pronunciation::Parser
     @syllables = []
     @consonant_queue = []
     @current_syllable = Pronunciation::Syllable.new
-    super
+    super()
   end
 
   state_machine :state, :initial => :initial_onset do

@@ -1,9 +1,11 @@
-Factory.define :word do |word|
-  word.name 'testword'
-end
+FactoryGirl.define do
+  factory :word do
+    name 'testword'
 
-Factory.define :word_with_pronunciation, :parent => :word do |word|
-  word.pronunciations do
-    [Factory(:pronunciation)]
+    factory :word_with_pronunciation do
+      after_create do |word|
+        FactoryGirl.create_list(:pronunciation, 1, word: word)
+      end
+    end
   end
 end
