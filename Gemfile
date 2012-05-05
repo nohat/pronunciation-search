@@ -24,6 +24,7 @@ gem 'sass-rails'
 gem 'text'
 gem 'uglifier'
 gem 'state_machine'
+gem 'skeleton-rails'
 
 group :test do
   # Pretty printed test output
