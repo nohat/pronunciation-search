@@ -1,5 +1,6 @@
-.push-3
+#search-form
   %form{:action => pronunciations_path, :method => "get", "accept-charset" => "UTF-8", "data-remote" => "true", "data-type" => "html"}
     %p
       = text_field_tag :q, @query_string, :class => 'large'
+    %p
       = submit_tag 'Search'

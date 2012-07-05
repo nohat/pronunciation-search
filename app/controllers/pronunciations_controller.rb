@@ -2,7 +2,9 @@ class PronunciationsController < ApplicationController
   def index
     if params[:q]
       @query_string = params[:q]
-      matches = Pronunciation.search(@query_string)
+      @left_anchored = params[:left_anchored]
+      @right_anchored = params[:right_anchored]
+      matches = Pronunciation.search(@query_string, @left_anchored, @right_anchored)
       @pronunciations = Kaminari.paginate_array(matches).page params[:page]
     else
       @pronunciations = Pronunciation.includes(:word).page params[:page]

@@ -41,5 +41,9 @@ module Pron
     config.filter_parameters += [:password]
 
     config.assets.enabled = true
+
+    config.generators do |g|
+      g.template_engine :haml
+    end
   end
 end

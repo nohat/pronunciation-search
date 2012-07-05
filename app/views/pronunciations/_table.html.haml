@@ -1,8 +1,8 @@
-%table
+%table.table.table-striped
   %tr
-    %th word
-    %th ARPAbet
-    %th IPA
+    %th.span4 word
+    %th.span4 ARPAbet
+    %th.span4 IPA
   - @pronunciations.each do |pronunciation|
     %tr
       %td= pronunciation.word.name

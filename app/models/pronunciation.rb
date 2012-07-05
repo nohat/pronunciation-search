@@ -33,7 +33,7 @@ class Pronunciation < ActiveRecord::Base
   end
 
   module Search
-    def search(query)
+    def search(query, left_anchored, right_anchored)
       clause, params = parse_query(query)
       raise 'No query found' if clause.blank?
       matches = Pronunciation.includes(:word).where(clause, *params).map do |pron|
@@ -49,7 +49,7 @@ class Pronunciation < ActiveRecord::Base
       pronunciations = query.scan(/(~)?\/(.*?)\//)
       spellings.each do |neg, string|
         invalid_chars = string.scan(/\W/).uniq
-        if ! invalid_chars.empty?
+        if invalid_chars.present?
           raise "Spelling contains invalid characters: #{invalid_chars.join}"
         end
         params << string
@@ -57,8 +57,8 @@ class Pronunciation < ActiveRecord::Base
       end
       pronunciations.each do |neg, string|
         string.gsub!(/\b(AA|AE|AH|AO|AW|AY|EH|ER|EY|IH|IY|OW|OY|UH|UW)\b/, '\1.')
-        invalid_chars = string.scan(/[^A-Za-z012()|. ]/).uniq
-        if ! invalid_chars.empty?
+        invalid_chars = string.scan(/[^A-Za-z012$^()|. ]/).uniq
+        if invalid_chars.present?
           raise "Pronunciation contains invalid characters: #{invalid_chars.join}"
         end
         params << string
