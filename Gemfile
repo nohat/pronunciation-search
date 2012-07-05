@@ -21,10 +21,12 @@ gem 'kaminari'
 gem 'rails3-jquery-autocomplete'
 gem 'ruby-graphviz', :require => 'graphviz'
 gem 'sass-rails'
-gem 'text'
-gem 'uglifier'
-gem 'state_machine'
 gem 'skeleton-rails'
+gem 'state_machine'
+gem 'text'
+gem 'twitter-bootstrap-rails'
+gem 'uglifier'
+gem 'rails_exception_handler', "~> 2"
 
 group :test do
   # Pretty printed test output
