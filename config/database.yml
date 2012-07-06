@@ -25,4 +25,4 @@ production:
   pool: 5
   username: root
   password: banana
-  socket: /tmp/mysql.sock
+  socket: /var/run/mysqld/mysqld.sock
