@@ -6,6 +6,5 @@
  *= require bootstrap_and_overrides
  *= require base
  *= require layout
- *= require skeleton
  *= require_directory '.'
 */

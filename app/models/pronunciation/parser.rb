@@ -73,7 +73,7 @@ class Pronunciation::Parser
     %W[S P], %W[S T], %W[S K], %W[S M], %W[S N], %W[S P R], %W[S T R], %W[S K R], %W[S M Y],
   ]
   # TODO: handle SH R mush|room vs.en|shrine
-  # TODO: hanlde D Y good|year vs. en|dure
+  # TODO: handle D Y good|year vs. en|dure
 
   def split_consonant_cluster
     coda = consonant_queue.clone
