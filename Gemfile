@@ -9,7 +9,7 @@ gem 'mysql2'
 gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 gem 'coffee-script'
 gem 'compass', '>= 0.11.3'
