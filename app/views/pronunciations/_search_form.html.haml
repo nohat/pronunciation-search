@@ -1,4 +1,18 @@
-.input-append
-  %form.form-search{:action => pronunciations_path, :method => "get", "accept-charset" => "UTF-8"}<
-    = text_field_tag :q, @query_string, :class => 'span7 search-query'
-    = submit_tag 'Search', :class => 'btn'
+.row
+  %form{action: pronunciations_path, method: "get", "accept-charset" => "UTF-8"}<
+    - placeholder = @query_string ? @query_string : "/AA R P AH B EH T/"
+    .col-lg-12
+      .input-group
+        %span.input-group-btn
+          %button.btn-lg.btn.btn-default#pronbtn{type: "button"} pronunciation
+          %button.btn-lg.btn.btn-default#spelbtn{type: "button"} spelling
+        %input.input-lg.form-control#q{name: "q", placeholder: placeholder, type: "text", value: @query_string}/
+        %span.input-group-btn
+          %button.btn-lg.btn.btn-default{type: "submit"} Search
+%hr
+.panel
+  .panel-heading
+    %h3.panel-title Examples
+  %ul
+    %li "/AE SH/" to search for all words with the sound "ash"
+    %li "/UH SH$/ ~&lt;BUSH&gt;" to search for all words that rhyme with "bush" but don't have the word "bush" in them.

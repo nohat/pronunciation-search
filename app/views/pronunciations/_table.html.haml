@@ -1,10 +1,9 @@
-%table.table.table-striped
-  %tr
-    %th.span4 word
-    %th.span4 ARPAbet
-    %th.span4 IPA
-  - @pronunciations.each do |pronunciation|
-    %tr
-      %td= pronunciation.word.name
-      %td= pronunciation.arpabet
-      %td= pronunciation.ipa
+.row.result-header
+  .col-lg-4.column-header word
+  .col-lg-4.column-header ARPAbet
+  .col-lg-4.column-header IPA
+- @pronunciations.each do |pronunciation|
+  .row.result
+    .col-lg-4.result-cell= pronunciation.word.name
+    .col-lg-4.result-cell= pronunciation.arpabet
+    .col-lg-4.result-cell= pronunciation.ipa

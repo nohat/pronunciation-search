@@ -5,7 +5,6 @@
     %meta(name="viewport" content="width=device-width, initial-scale=1.0")
     %title= content_for?(:title) ? yield(:title) : "Pron"
     = csrf_meta_tags
-    / Le HTML5 shim, for IE6-8 support of HTML elements
     /[if lt IE 9]
       = javascript_include_tag "http://html5shim.googlecode.com/svn/trunk/html5.js"
     = stylesheet_link_tag "application", :media => "all"
@@ -15,20 +14,30 @@
     %link(href="images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114")
 
 
-
   %body
-    .navbar
-      .navbar-inner
-        .container-fluid
-          %a.btn.btn-navbar(data-target=".nav-collapse" data-toggle="collapse")
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          %a.brand(href="#") Pronunciation Search
-          .container.nav-collapse
-            %ul.nav
-              %li= link_to "About", "/about"
+    .navbar.navbar-static-top
+      .container
+        %button.navbar-toggle{"data-target" => ".nav-collapse", "data-toggle" => "collapse", :type => "button"}
+          %span.icon-bar
+          %span.icon-bar
+          %span.icon-bar
+        %a.navbar-brand{:href => "/"} Pronunciation Search
+        .nav-collapse.collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Home
+            %li
+              %a{:href => "/about"} About
+            %li
+              %a{:href => "/faq"} FAQ
+            %li
+              %a{:href => "/contact"} Contact
     .container
+      .starter-template
+        %h1 Query the pronunciation dictionary
+        %p.lead
+          Put query tokens inside slashes for pronunciation, and inside angle brackets for spelling.
+          %br/
       - if @error
         .alert.alert-error
           = @error.to_s

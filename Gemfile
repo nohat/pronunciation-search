@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-gem 'rails', '>=3.2'
+gem 'rails', '>= 4.0'
 
 gem 'bugsnag'
 gem 'capistrano'
@@ -19,7 +19,9 @@ gem 'sass-rails'
 gem 'sqlite3'
 gem 'state_machine'
 gem 'text'
-gem 'twitter-bootstrap-rails'
+gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
+                              :github => 'anjlab/bootstrap-rails',
+                              :branch => '3.0.0'
 gem 'uglifier'
 gem 'unicorn'
 
@@ -29,6 +31,8 @@ group :test do
 end
 
 group :test, :development do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem 'factory_girl_rails'
   gem 'pry'
   gem 'pry-rails'

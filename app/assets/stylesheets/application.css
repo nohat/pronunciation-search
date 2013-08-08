@@ -3,6 +3,23 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require bootstrap_and_overrides
+ *= require twitter/bootstrap
  *= require_directory '.'
 */
+
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.column-header {
+  background-color: #DDD;
+  padding: 15px 15px;
+  font-weight: bold;
+}
+
+.result {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #DDD;
+}
